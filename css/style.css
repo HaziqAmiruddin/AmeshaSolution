@@ -15,13 +15,32 @@
 }
 /*** Spinner End ***/
 
+/* button on the side */
 .back-to-top {
+    position: fixed;
+    right: 30px;
+    bottom: 90px;
+    transition: 0.5s;
+    z-index: 99;
+}
+
+.back-to-home {
     position: fixed;
     right: 30px;
     bottom: 30px;
     transition: 0.5s;
     z-index: 99;
 }
+
+.whatsapp-to-click {
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    transition: 0.5s;
+    z-index: 99;
+    background-color: green;
+}
+/* button on the side */
 
 /*** Button Start ***/
 .btn {
@@ -77,12 +96,11 @@
 
 .btn.btn-secondary {
     color: var(--bs-white);
-   
 }
 
 .btn.btn-secondary:hover {
     background: var(--bs-primary);
-    border: 1px solid var(--bs-primary);
+    /* border: 1px solid var(--bs-primary); */
 }
 /*** Topbar Start ***/
 
@@ -103,9 +121,12 @@
     color: var(--bs-dark);
 }
 
-.navbar-light .navbar-nav .nav-link:hover,
 .navbar-light .navbar-nav .nav-link.active {
     color: var(--bs-primary);
+}
+
+.navbar-light .navbar-nav .nav-link:hover{
+    color: hotpink;
 }
 
 .navbar-light .navbar-brand img {
@@ -137,6 +158,17 @@
     background: var(--bs-light);
     transition: .5s;
     opacity: 1;
+}
+
+/* Default nav link color */
+.navbar .nav-link {
+  color: white;
+  transition: color 0.3s ease;
+}
+
+/* When navbar has light background (like after scroll) */
+.navbar.scrolled .nav-link {
+  color: #333; /* or your dark text color */
 }
 
 @media (max-width: 991.98px) {
@@ -200,7 +232,7 @@
         border: none;
     }
 
-    .navbar-light .navbar-nav .nav-item::before {
+    .navbar-light .navbar-nav .nav-link::before {
         position: absolute;
         content: "";
         width: 0;
@@ -211,11 +243,11 @@
         transition: .5s;
     }
 
-    .sticky-top.navbar-light .navbar-nav .nav-item::before {
+    .sticky-top.navbar-light .navbar-nav .nav-link::before {
         bottom: 0;
     }
 
-    .navbar-light .navbar-nav .nav-item::after {
+    .navbar-light .navbar-nav .nav-link::after {
         content: "";
         position: absolute;
         bottom: 1px;
@@ -227,14 +259,14 @@
         transition: 0.5s;
     }
 
-    .navbar-light .navbar-nav .nav-item:hover::after,
-    .navbar-light .navbar-nav .nav-item.active::after {
+    /* .navbar-light .navbar-nav .nav-item:hover::after, */
+    .navbar-light .navbar-nav .nav-link.active::after {
         bottom: 1px;
         opacity: 1;
     }
 
-    .navbar-light .navbar-nav .nav-item:hover::before,
-    .navbar-light .navbar-nav .nav-item.active::before {
+    /* .navbar-light .navbar-nav .nav-item:hover::before, */
+    .navbar-light .navbar-nav .nav-link.active::before {
         width: calc(100% - 2px);
         left: 1px;
     }
@@ -243,6 +275,7 @@
         display: none;
     }
 }
+
 /*** Carousel Hero Header Start ***/
 .carousel-header {
     position: relative;
@@ -865,7 +898,7 @@
 
 .footer .footer-item a {
     line-height: 35px;
-    color: var(--bs-body);
+    color: var(--bs-white);
     transition: 0.5s;
 }
 
@@ -874,8 +907,8 @@
 }
 
 .footer .footer-item a:hover {
-    letter-spacing: 1px;
-    color: var(--bs-primary);
+    letter-spacing: 0.1px;
+    color: hotpink;
 }
 
 .footer .footer-item .footer-btn a,
@@ -898,5 +931,3 @@
     background: var(--bs-dark);
 }
 /*** copyright end ***/
-
-
