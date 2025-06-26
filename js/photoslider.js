@@ -43,4 +43,38 @@ function imageSlider(parent) {
   }, 10000);
 }
 
-imageSlider(document.querySelector(".image-slider"));
+//select all iamge slider so that all will work
+document.querySelectorAll(".image-slider").forEach(slider => {
+  imageSlider(slider);
+});
+
+ const sliderContainer = document.querySelector(".image-slider");
+
+  // Click image to toggle fullscreen
+  sliderContainer.querySelectorAll(".slider-image").forEach((img) => {
+    img.addEventListener("click", () => {
+      if (!document.fullscreenElement) {
+        sliderContainer.requestFullscreen().catch((err) => {
+          console.error(`Error entering fullscreen: ${err.message}`);
+        });
+      } else {
+        document.exitFullscreen();
+      }
+    });
+  });
+
+  // Select all sliders
+  document.querySelectorAll(".image-slider").forEach((sliderContainer) => {
+    // Attach fullscreen logic to each image inside the slider
+    sliderContainer.querySelectorAll(".slider-image").forEach((img) => {
+      img.addEventListener("click", () => {
+        if (!document.fullscreenElement) {
+          sliderContainer.requestFullscreen().catch((err) => {
+            console.error(`Error attempting fullscreen: ${err.message}`);
+          });
+        } else {
+          document.exitFullscreen();
+        }
+      });
+    });
+  });
