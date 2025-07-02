@@ -585,6 +585,18 @@
     z-index: 2;
 }
 
+/* Add h4 selector to match your HTML */
+.service-item .service-content h4,
+.service-item .service-content p {
+    color: black;
+    transition: 0.5s;
+}
+
+/* On hover, change both h4 and p to white */
+.service-item:hover .service-content p {
+    color: var(--bs-white);
+}
+
 .service-item .service-content a,
 .service-item .service-content p {
     transition: 0.5s;
